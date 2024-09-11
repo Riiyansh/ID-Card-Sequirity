@@ -70,4 +70,4 @@ This project provides a simple yet effective method for detecting tampering in P
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 ```
 
-You can copy this Markdown text directly into your `README.md` file.
+
