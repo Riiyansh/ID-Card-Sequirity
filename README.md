@@ -1,4 +1,4 @@
-<img width="1512" alt="Screenshot 2025-05-02 at 10 28 34 AM" src="https://github.com/user-attachments/assets/09479649-06a1-4977-83af-e78b99ad2feb" />
+
 # PAN Card Tampering Detection
 
 ## Overview
