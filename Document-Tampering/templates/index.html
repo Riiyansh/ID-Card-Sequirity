@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ID Card Tampering Detection</title>
+  <style>
+    /* Base styles */
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      text-align: center;
+      padding: 40px;
+      transition: background 0.3s, color 0.3s;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: auto;
+      transition: background 0.3s;
+    }
+    .drop-zone {
+      border: 2px dashed #ccc;
+      padding: 20px;
+      margin: 15px 0;
+      position: relative;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .drop-zone input[type="file"] {
+      opacity: 0;
+      position: absolute;
+      width: 100%; height: 100%;
+      left: 0; top: 0;
+      cursor: pointer;
+    }
+    .preview {
+      max-width: 100%;
+      margin-top: 10px;
+      border-radius: 8px;
+      display: none;
+    }
+    input[type="submit"] {
+      padding: 10px 20px;
+      border: none;
+      background: black;
+      color: white;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    input[type="submit"]:hover {
+      background: #333;
+    }
+    .spinner {
+      width: 30px;
+      height: 30px;
+      border: 4px solid #ccc;
+      border-top: 4px solid #333;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+      display: none;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .image-section {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+    .image-block h3 {
+      margin-bottom: 10px;
+    }
+    .image-block img {
+      max-width: 280px;
+      border-radius: 10px;
+      transition: border-color 0.3s;
+    }
+    .result {
+      background: #ffeaea;
+      color: #d63333;
+      padding: 10px;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-weight: bold;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    /* Dark mode */
+    body.dark-mode {
+      background: #121212;
+      color: #eee;
+    }
+    body.dark-mode form {
+      background: #1e1e1e;
+    }
+    body.dark-mode .drop-zone {
+      background: #2a2a2a;
+      border-color: #555;
+    }
+    body.dark-mode input[type="submit"] {
+      background: #444;
+      color: #eee;
+    }
+    body.dark-mode input[type="submit"]:hover {
+      background: #666;
+    }
+    body.dark-mode .image-block img {
+      border: 1px solid #444;
+    }
+    body.dark-mode .result {
+      background: #331a1a;
+      color: #ff8c8c;
+    }
+
+    /* Dark toggle button */
+    #darkToggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: transparent;
+      border: 2px solid currentColor;
+      border-radius: 20px;
+      padding: 6px 12px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    #darkToggle:hover {
+      background: rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <button id="darkToggle" onclick="toggleDarkMode()">🌗 Toggle Dark Mode</button>
+  <h2>ID Card Tampering Detection</h2>
+
+  <form id="uploadForm" method="post" action="/compare" enctype="multipart/form-data" onsubmit="startLoading()">
+    <div class="drop-zone" onclick="triggerInput('image1')">
+      <input type="file" id="image1" name="image1" accept="image/*" required onchange="previewImage(this,'preview1')">
+      <span>Upload Original Image</span>
+      <img id="preview1" class="preview">
+    </div>
+
+    <div class="drop-zone" onclick="triggerInput('image2')">
+      <input type="file" id="image2" name="image2" accept="image/*" required onchange="previewImage(this,'preview2')">
+      <span>Upload Suspected Image</span>
+      <img id="preview2" class="preview">
+    </div>
+
+    <input type="submit" value="Compare">
+  </form>
+
+  <div class="spinner" id="loadingSpinner"></div>
+
+  {% if original and suspected %}
+    <div class="image-section">
+      <div class="image-block">
+        <h3>Original</h3>
+        <img src="data:image/png;base64,{{ original }}">
+      </div>
+      <div class="image-block">
+        <h3>Suspected</h3>
+        <img src="data:image/png;base64,{{ suspected }}">
+      </div>
+    </div>
+  {% endif %}
+
+  {% if marked %}
+    <div style="margin-top: 30px;">
+      <h3>Tampered Areas Highlighted</h3>
+      <img src="data:image/png;base64,{{ marked }}" style="max-width: 90%; border: 2px solid red; border-radius: 10px;">
+    </div>
+  {% endif %}
+
+  {% if result %}
+    <div class="result">{{ result }}</div>
+  {% endif %}
+
+  {% if similarity %}
+    <div class="result">Similarity: {{ similarity }}</div>
+  {% endif %}
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
