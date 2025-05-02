@@ -1,7 +1,12 @@
-
+<img width="1512" alt="Screenshot 2025-05-02 at 10 28 34 AM" src="https://github.com/user-attachments/assets/09479649-06a1-4977-83af-e78b99ad2feb" />
 # PAN Card Tampering Detection
 
 ## Overview
+
+<img width="1512" alt="Screenshot <img width="1512" alt="Screenshot 2025-05-02 at 10 28 19 AM" src="https://github.com/user-attachments/assets/b4c321db-660e-4361-b2fb-4f6fface0081" />
+2025-05-02 at 10 28 27 AM" src="https://github.com/user-attachments/assets/bdc61417-23c6-4fb8-b605-fba9cf5e01d8" />
+
+<img width="1512" alt="Screenshot 2025-05-02 at 10 28 34 AM" src="https://github.com/user-attachments/assets/3e65d3c0-34c6-4533-b61b-bb69955e9c34" />
 
 This project is designed to detect tampering of PAN cards using computer vision techniques. It helps organizations verify the authenticity of PAN cards provided by employees, customers, or any other individuals. The project achieves this by calculating the structural similarity between an original PAN card and a user-provided PAN card image.
 
