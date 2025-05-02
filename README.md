@@ -1,3 +1,4 @@
+[![Live App](https://img.shields.io/badge/View-Live--Demo-brightgreen?style=for-the-badge)](https://minor-project-klmh.onrender.com)
 
 # PAN Card Tampering Detection
 
