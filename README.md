@@ -1,6 +1,6 @@
 [![Live App](https://img.shields.io/badge/View-Live--Demo-brightgreen?style=for-the-badge)](https://minor-project-klmh.onrender.com)
 
-# PAN Card Tampering Detection
+# ID Card Tampering Detection
 
 ## Overview
 <img width="1499" alt="Screenshot 2025-05-02 at 10 28 27 AM" src="https://github.com/user-attachments/assets/5b4cd61c-f2e5-4351-a361-6ef7579dc473" />
@@ -9,7 +9,7 @@
 <img width="1502" alt="Screenshot 2025-05-02 at 10 28 19 AM" src="https://github.com/user-attachments/assets/8a00447a-d693-476c-8c29-297f803d0195" />
 
 
-This project is designed to detect tampering of PAN cards using computer vision techniques. It helps organizations verify the authenticity of PAN cards provided by employees, customers, or any other individuals. The project achieves this by calculating the structural similarity between an original PAN card and a user-provided PAN card image.
+This project is designed to detect tampering of ID cards using computer vision techniques. It helps organizations verify the authenticity of PAN cards provided by employees, customers, or any other individuals. The project achieves this by calculating the structural similarity between an original PAN card and a user-provided PAN card image.
 
 ## Project Workflow
 
