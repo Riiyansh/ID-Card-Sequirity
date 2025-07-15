@@ -10,12 +10,12 @@
 <img width="1502" alt="Screenshot 2025-05-02 at 10 28 19 AM" src="https://github.com/user-attachments/assets/8a00447a-d693-476c-8c29-297f803d0195" />
 
 
-This project is designed to detect tampering of ID cards using computer vision techniques. It helps organizations verify the authenticity of PAN cards provided by employees, customers, or any other individuals. The project achieves this by calculating the structural similarity between an original PAN card and a user-provided PAN card image.
+This project is designed to detect tampering of documents using computer vision techniques. It helps organizations verify the authenticity of documents provided by employees, customers, or any other individuals. The project achieves this by calculating the structural similarity between an original document and a user-provided document image.
 
 ## Project Workflow
 
 1. **Image Loading and Preprocessing:**
-   - The original PAN card image and the user-provided PAN card image are loaded.
+   - The original document image and the user-provided document image are loaded.
    - Images are resized and formatted to ensure consistency in comparison.
 
 2. **Structural Similarity Index (SSIM):**
