@@ -1,6 +1,7 @@
 [![Live App](https://img.shields.io/badge/View-Live--Demo-brightgreen?style=for-the-badge)](https://minor-project-klmh.onrender.com)
 
-# ID Card Tampering Detection
+# Document Verification System using Image Similarity
+
 
 ## Overview
 <img width="1499" alt="Screenshot 2025-05-02 at 10 28 27 AM" src="https://github.com/user-attachments/assets/5b4cd61c-f2e5-4351-a361-6ef7579dc473" />
