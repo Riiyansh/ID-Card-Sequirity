@@ -59,7 +59,7 @@ pip install scikit-image imutils opencv-python Pillow requests
 
 ## Applications
 
-- **Identity Verification:** This project can be used by organizations to verify the authenticity of PAN cards provided by users.
+- **Identity Verification:** This project can be used by organizations to verify the authenticity of documents provided by users.
 - **Tampering Detection for Other IDs:** The methodology can be extended to detect tampering in other types of identity documents, such as Aadhar cards, voter IDs, etc.
 
 ## Future Scope
